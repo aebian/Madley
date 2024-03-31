@@ -12,7 +12,7 @@ class RU_VVS_HPLT : CommonRussia // VVS [Helicopter Pilot]
 	binoculars[] = {""};
 	compass[] = {"ItemCompass"};
 	goggles[] = {"G_Aviator"};
-	gps[] = {"o_EasyTrack_PDA"};
+	gps[] = {"ItemGPS"};
 	headgear[] = {"rhs_zsh7a_mike_green_alt"};
 	map[] = {"ItemMap"};
 	watch[] = {"ItemWatch"};

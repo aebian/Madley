@@ -1,5 +1,34 @@
 // United States Airforce - File
 
+class US_AIRFORCE_GENERAL : US_ARMY_DEFAULT_UCP // Airforce General (Parade Uniform)
+{
+	uniform[] = {"U_B_ParadeUniform_01_US_decorated_F"};
+	vest[] = {""};
+	backpack[] = {""};
+	primary[] = {""};
+	secondary[] = {"rhsusf_weap_glock17g4","acc_pointer_IR_pistol_RF","rhsusf_mag_17Rnd_9x19_JHP"};
+	launcher[] = {""};
+	magazines[] = {"rhs_mag_m18_red",2,"rhsusf_mag_17Rnd_9x19_JHP",2};
+	items[] += {"ACE_packingBandage",2,"ACE_fieldDressing",2,"ACE_EarPlugs",1};
+	lrradios[] =  {"ACRE_PRC148"};
+	binoculars[] = {"rhsusf_bino_lerca_1200_tan"};
+	compass[] = {"ItemCompass"};
+	goggles[] = {""};
+	gps[] = {"ItemGPS"};
+	headgear[] = {"rhssaf_beret_green"};
+	map[] = {"ItemMap"};
+	nvgs[] = {""};
+	watch[] = {"ACE_Altimeter"};
+
+};
+
+class US_AIRFORCE_GENERAL_CU : US_AIRFORCE_GENERAL // AIrfoce Genral (Combat Uniform)
+{
+	uniform[] = {"rhs_uniform_g3_m81"};
+	vest[] = {"rhsusf_plateframe_teamleader"};
+
+};
+
 class US_AIRFORCE_SECF_LEAD : US_ARMY_DEFAULT_UCP // Airforce Security Forces Lead
 {
 	uniform[] = {"rhs_uniform_abu"};
@@ -156,7 +185,15 @@ class US_AIRFORCE_STARGATE03_MG_WDL : US_AIRFORCE_STARGATE03_MG // Airforce Star
 	headgear[] = {"H_Watchcap_camo"};
 };
 
-
+class US_AIRFORCE_STARGATE23_TL : US_AIRFORCE_STARGATE03_TL_WDL // Airforce Stargate 23 Leader
+{
+	vest[] = {"V_PlateCarrier2_rgr_noflag_F"};
+	goggles[] = {"rhsusf_shemagh2_gogg_grn"};
+	primary[] = {"rhs_weap_m249_pip_L_para","rhsusf_acc_SF3P556","rhsusf_acc_anpeq15A", "rhsusf_acc_ACOG_MDO", "rhsusf_200Rnd_556x45_soft_pouch"};
+	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhsusf_200Rnd_556x45_soft_pouch",5};
+	headgear[] = {"rhsusf_ach_bare_wood_headset"};
+	backpack[] = {"B_Kitbag_sgg"};
+};
 
 class US_AIRFORCE_STARGATE_MED_LEAD : CommonAmerica // Airforce Stargate Medic Team-Lead
 {
