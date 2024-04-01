@@ -19,6 +19,7 @@ class US_AIRFORCE_GENERAL : US_ARMY_DEFAULT_UCP // Airforce General (Parade Unif
 	map[] = {"ItemMap"};
 	nvgs[] = {""};
 	watch[] = {"ACE_Altimeter"};
+	postLoadout = "(_this select 0) action [""SwitchWeapon"", (_this select 0), (_this select 0), 100];";
 
 };
 
@@ -185,7 +186,7 @@ class US_AIRFORCE_STARGATE03_MG_WDL : US_AIRFORCE_STARGATE03_MG // Airforce Star
 	headgear[] = {"H_Watchcap_camo"};
 };
 
-class US_AIRFORCE_STARGATE23_TL : US_AIRFORCE_STARGATE03_TL_WDL // Airforce Stargate 23 Leader
+class US_AIRFORCE_STARGATE23_TL_WDL : US_AIRFORCE_STARGATE03_TL_WDL // Airforce Stargate 23 Leader
 {
 	vest[] = {"V_PlateCarrier2_rgr_noflag_F"};
 	goggles[] = {"rhsusf_shemagh2_gogg_grn"};
@@ -193,6 +194,12 @@ class US_AIRFORCE_STARGATE23_TL : US_AIRFORCE_STARGATE03_TL_WDL // Airforce Star
 	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhsusf_200Rnd_556x45_soft_pouch",5};
 	headgear[] = {"rhsusf_ach_bare_wood_headset"};
 	backpack[] = {"B_Kitbag_sgg"};
+};
+
+class US_AIRFORCE_STARGATE23_RFL_WDL : US_AIRFORCE_STARGATE23_TL_WDL // Airforce Stargate 23 Leader
+{
+	primary[] = {"rhs_weap_mk18_KAC_wd","rhsusf_acc_anpeq15A","rhsusf_acc_eotech_552","rhs_mag_30Rnd_556x45_Mk318_PMAG"};
+	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_30Rnd_556x45_Mk318_PMAG",5};
 };
 
 class US_AIRFORCE_STARGATE_MED_LEAD : CommonAmerica // Airforce Stargate Medic Team-Lead
@@ -237,4 +244,5 @@ class US_AIRFORCE_STARGATE_MED_NG : US_AIRFORCE_STARGATE_MED_LEAD // Airforce St
 class US_AIRFORCE_STARGATE_MED_NG_WDL : US_AIRFORCE_STARGATE_MED_NG // Airforce Stargate Medic (No-Gun)
 {
 	uniform[] = {"rhs_uniform_bdu_erdl"};
+	postLoadout = "(_this select 0) action [""SwitchWeapon"", (_this select 0), (_this select 0), 100];";
 };
