@@ -378,7 +378,8 @@ class US_ARMY_RANGER_ARM : US_ARMY_RANGER_RFL
 {
 	vest[] = {"rhsusf_mbav_mg"};
 	primary[] = {"rhs_weap_m249_pip_L_vfg","rhsusf_acc_saw_bipod","rhsusf_acc_anpeq15side","rhsusf_acc_eotech_552_d","rhsusf_200Rnd_556x45_soft_pouch"};
-	magazines[] = {"rhsusf_200Rnd_556x45_soft_pouch",3,"11Rnd_45ACP_Mag",2 };
+	backpack[] = {"B_Kitbag_tan"};
+	magazines[] = {"rhsusf_200Rnd_556x45_soft_pouch",6,"11Rnd_45ACP_Mag",4};
 };
 
 class US_ARMY_RANGER_ARM_NEW : US_ARMY_RANGER_ARM 
@@ -420,12 +421,20 @@ class US_ARMY_RANGER_SNP : US_ARMY_RANGER_RFL // US Army Ranger (Sniper)
 {
 	uniform[] = {"rhs_uniform_g3_mc"};
 	vest[] = {"rhsusf_mbav_rifleman"};
-	backpack[] = {""};
-	primary[] = {"rhs_weap_m24sws_d","rhsusf_acc_m24_muzzlehider_d" ,"rhsusf_acc_M8541_low_d" ,"rhsusf_5Rnd_762x51_m118_special_Mag" ,"rhsusf_acc_harris_swivel","rhsusf_5Rnd_762x51_m993_Mag"};
+	primary[] = {"rhs_weap_XM2010_sa","rhsusf_acc_M2010S","rhsusf_acc_anpeq15side","rhsusf_acc_M8541_wd","bipod_02_F_hex","rhsusf_5Rnd_300winmag_xm2010"};
 	launcher[] = {""};
-	magazines[] = {"rhsusf_5Rnd_762x51_m993_Mag",8,"rhsusf_5Rnd_762x51_m118_special_Mag",6 ,"11Rnd_45ACP_Mag",3 };
-	items[] += {"rhsusf_acc_eotech_552_d","rhsusf_acc_m24_silencer_d"};
+	magazines[] = {"rhsusf_5Rnd_300winmag_xm2010",15,"11Rnd_45ACP_Mag",4};
+	items[] += {};
+	postLoadout = "(unitbackPack (_this select 0)) addItemCargoGlobal [""rhsusf_acc_eotech_552_d"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_CableTie"",2];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_bodyBag_blue"",2];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_Kestrel4500"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_MapTools"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_RangeCard"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_PlottingBoard"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_rope6"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_SpottingScope"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_Flashlight_KSF1"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_DAGR"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_ATragMX"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_EntrenchingTool"",1];";
 };
+
+class US_ARMY_RANGER_SNP_AM : US_ARMY_RANGER_SNP // US Army Ranger (Sniper - Anti Material)
+{
+	primary[] = {"rhs_weap_M107_w","rhsusf_acc_M8541_mrds","rhsusf_mag_10Rnd_STD_50BMG_mk211"};
+	magazines[] = {"rhsusf_mag_10Rnd_STD_50BMG_mk211",5,"rhsusf_mag_10Rnd_STD_50BMG_M33",1,"11Rnd_45ACP_Mag",3 };
+};
+
+
 
 class US_ARMY_SPC_SNIPER : US_ARMY_DEFAULT_UCP // Army Sniper
 { 
