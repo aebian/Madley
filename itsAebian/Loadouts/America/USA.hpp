@@ -266,7 +266,7 @@ class US_ARMY_OATSA : US_ARMY_ORFL // Army [AT-Specialist Assistant] OCP
 	magazines[] += {"rhs_mag_maaws_HEAT",2};
 };
 
-class US_ARMY_UATSA : US_ARMY_OASA // Army [AT-Specialist Assistant] UCP
+class US_ARMY_UATSA : US_ARMY_OATSA // Army [AT-Specialist Assistant] UCP
 {
 	uniform[] = {"rhs_uniform_cu_ucp"};
 	vest[] = {"rhsusf_spcs_ucp_rifleman","rhsusf_spcs_ucp_rifleman_alt"};
