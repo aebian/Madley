@@ -260,19 +260,48 @@ class US_ARMY_UATS : US_ARMY_OATS // Army [AT-Specialist] UCP
 };
 
 
-class US_ARMY_OASA : US_ARMY_ORFL // Army [AT-Specialist Assistant] OCP
+class US_ARMY_OATSA : US_ARMY_ORFL // Army [AT-Specialist Assistant] OCP
 {
 	backpack[] = {"rhsusf_assault_eagleaiii_ocp"};
 	magazines[] += {"rhs_mag_maaws_HEAT",2};
 };
 
-class US_ARMY_UASA : US_ARMY_OASA // Army [AT-Specialist Assistant] UCP
+class US_ARMY_UATSA : US_ARMY_OASA // Army [AT-Specialist Assistant] UCP
 {
 	uniform[] = {"rhs_uniform_cu_ucp"};
 	vest[] = {"rhsusf_spcs_ucp_rifleman","rhsusf_spcs_ucp_rifleman_alt"};
 	headgear[] = {"rhsusf_ach_helmet_ucp_alt","rhsusf_ach_helmet_ucp","rhsusf_ach_helmet_ESS_ucp","rhsusf_ach_helmet_headset_ucp","rhsusf_ach_helmet_headset_ucp_alt","rhsusf_ach_helmet_headset_ess_ucp"};
 	backpack[] = {"rhsusf_assault_eagleaiii_ucp"};
 };
+
+class US_ARMY_OAAS : US_ARMY_OATS // Army [AA-Specialist] OCP
+{
+	launcher[] = {"rhs_weap_fim92","rhs_fim92_mag"};
+	magazines[] += {"rhs_fim92_mag",2};
+};
+
+class US_ARMY_UAAS : US_ARMY_OAAS // Army [AA-Specialist] UCP
+{
+	uniform[] = {"rhs_uniform_cu_ucp"};
+	vest[] = {"rhsusf_spcs_ucp_rifleman","rhsusf_spcs_ucp_rifleman_alt"};
+	headgear[] = {"rhsusf_ach_helmet_ucp_alt","rhsusf_ach_helmet_ucp","rhsusf_ach_helmet_ESS_ucp","rhsusf_ach_helmet_headset_ucp","rhsusf_ach_helmet_headset_ucp_alt","rhsusf_ach_helmet_headset_ess_ucp"};
+	backpack[] = {"rhsusf_assault_eagleaiii_ucp"};
+};
+
+class US_ARMY_OAASA : US_ARMY_ORFL // Army [AA-Specialist Assistant] OCP
+{
+	backpack[] = {"rhsusf_assault_eagleaiii_ocp"};
+	magazines[] += {"rhs_fim92_mag",2};
+};
+
+class US_ARMY_UAASA : US_ARMY_OASA // Army [AA-Specialist Assistant] UCP
+{
+	uniform[] = {"rhs_uniform_cu_ucp"};
+	vest[] = {"rhsusf_spcs_ucp_rifleman","rhsusf_spcs_ucp_rifleman_alt"};
+	headgear[] = {"rhsusf_ach_helmet_ucp_alt","rhsusf_ach_helmet_ucp","rhsusf_ach_helmet_ESS_ucp","rhsusf_ach_helmet_headset_ucp","rhsusf_ach_helmet_headset_ucp_alt","rhsusf_ach_helmet_headset_ess_ucp"};
+	backpack[] = {"rhsusf_assault_eagleaiii_ucp"};
+};
+
 
 class US_ARMY_OENG : US_ARMY_ORFL // Army [Engineer] OCP
 {
@@ -497,7 +526,7 @@ class US_ARMY_SPC_ACI : US_ARMY_DEFAULT_UCP // Army Counter Intelligence
 	map[] = {"ItemMap"};
 	nvgs[] = {"rhsusf_ANPVS_14"};
 	watch[] = {"ACE_Altimeter"};
-	preLoadout = "[(_this select 0),"""",""male02rus""] call BIS_fnc_setIdentity;(_this select 0) setVariable [""ACE_GForceCoef"",0];(_this select 0) setVariable [""ACE_medical_medicClass"",1,true];(_this select 0) setVariable [""ACE_IsEngineer"",2,true];";
+	preLoadout = "(_this select 0) setVariable [""ACE_GForceCoef"",0];(_this select 0) setVariable [""ACE_medical_medicClass"",1,true];(_this select 0) setVariable [""ACE_IsEngineer"",2,true];";
 }; 
 
 class US_ARMY_SPC_ACI_148 : US_ARMY_SPC_ACI // Army Counter Intelligence (with 148-Vest)
