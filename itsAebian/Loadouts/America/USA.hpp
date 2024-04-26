@@ -274,7 +274,7 @@ class US_ARMY_UATSA : US_ARMY_OATSA // Army [AT-Specialist Assistant] UCP
 	backpack[] = {"rhsusf_assault_eagleaiii_ucp"};
 };
 
-class US_ARMY_OAAS : US_ARMY_OATS // Army [AA-Specialist] OCP
+class US_ARMY_OAAS : US_ARMY_ORFL // Army [AA-Specialist] OCP
 {
 	launcher[] = {"rhs_weap_fim92","rhs_fim92_mag"};
 	magazines[] += {"rhs_fim92_mag",2};
