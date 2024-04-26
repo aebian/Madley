@@ -294,7 +294,7 @@ class US_ARMY_OAASA : US_ARMY_ORFL // Army [AA-Specialist Assistant] OCP
 	magazines[] += {"rhs_fim92_mag",2};
 };
 
-class US_ARMY_UAASA : US_ARMY_OASA // Army [AA-Specialist Assistant] UCP
+class US_ARMY_UAASA : US_ARMY_OAASA // Army [AA-Specialist Assistant] UCP
 {
 	uniform[] = {"rhs_uniform_cu_ucp"};
 	vest[] = {"rhsusf_spcs_ucp_rifleman","rhsusf_spcs_ucp_rifleman_alt"};
