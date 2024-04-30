@@ -501,6 +501,25 @@ class US_ARMY_SPC_SNIPER_ALT2 : US_ARMY_SPC_SNIPER  // Army Sniper (Alternate 2)
     postLoadout = "(unitbackPack (_this select 0)) addWeaponWithAttachmentsCargoGlobal [[""rhs_weap_XM2010_d"",""rhsusf_acc_M2010S"",""rhsusf_acc_anpeq15side"",""rhsusf_acc_premier_mrds"",[""rhsusf_5Rnd_300winmag_xm2010"",5],[],""bipod_02_F_hex""],1];(unitbackPack (_this select 0)) additemCargo [""rhsusf_5Rnd_300winmag_xm2010"",25];";
 };
 
+class US_ARMY_SPC_SNIPER_M81_M40 : US_ARMY_SPC_SNIPER // Army Sniper Weapon M40 
+{
+	uniform[] = {"rhs_uniform_g3_m81"};
+	vest[] = {"V_PlateCarrier1_rgr"};
+	backpack[] = {"rhsusf_falconii"};
+	primary[] = {"rhs_weap_m40a5_wd","rhsusf_acc_M8541_low_wd","rhsusf_acc_anpeq15A","rhsusf_10Rnd_762x51_m118_special_Mag","rhsusf_acc_harris_swivel"};
+	magazines[] = {"rhsusf_10Rnd_762x51_m118_special_Mag",8,"rhsusf_10Rnd_762x51_m993_Mag",4,"rhsusf_10Rnd_762x51_m62_Mag",4,"11Rnd_45ACP_Mag",3};
+	goggles[] = {""};
+	headgear[] = {"rhsusf_ach_bare_headset_ess"};
+	postLoadout = "";
+
+};
+
+class US_ARMY_SPC_SNIPER_M81_M2010 : US_ARMY_SPC_SNIPER_M81_M40 // Army Sniper Weapon M2010
+{
+	primary[] = {"rhs_weap_XM2010_wd","rhsusf_acc_M2010S_wd","rhsusf_acc_anpeq15A","rhsusf_acc_M8541_wd","rhsusf_acc_M8541_wd","rhsusf_acc_harris_bipod","rhsusf_5Rnd_300winmag_xm2010"};
+	magazines[] = {"rhsusf_5Rnd_300winmag_xm2010",22,"11Rnd_45ACP_Mag",3};
+};
+
 
 class US_ARMY_SPC_SPOTTER : US_ARMY_SPC_SNIPER_ALT2 // Army Spotter
 { 
@@ -606,4 +625,26 @@ class US_ARMY_JPLT : US_ARMY_DEFAULT_UCP // Army Jet Pilot
 	nvgs[] = {"rhsusf_ANPVS_14"};
 	watch[] = {"ACE_Altimeter"};
 	preLoadout = "(_this select 0) setVariable [""ACE_GForceCoef"",0]";
+};
+
+class US_ARMY_SPC_AEBIAN : US_ARMY_SPC_SNIPER // Army Aebian Specialist
+{
+	uniform[] = {"rhs_uniform_g3_m81"};
+	vest[] = {"V_PlateCarrier1_rgr"};
+	backpack[] = {"B_Kitbag_sgg"};
+	primary[] = {"rhs_weap_mk18_KAC_wd","rhsusf_acc_anpeq15side","rhsusf_acc_ACOG3","rhsusf_acc_SF3P556","rhs_mag_30Rnd_556x45_M196_Stanag_Tracer_Red"};
+	magazines[] = {"rhs_mag_30Rnd_556x45_M196_Stanag_Tracer_Red",8,"11Rnd_45ACP_Mag",3};
+	goggles[] = {""};
+	headgear[] = {"rhsusf_ach_bare_headset_ess"};
+	preLoadout = "(_this select 0) setVariable [""ACE_GForceCoef"",0];(_this select 0) setVariable [""ACE_medical_medicClass"",1,true];(_this select 0) setVariable [""ACE_IsEngineer"",2,true];(_this select 0) allowDamage false;";
+	postLoadout = "(unitbackPack (_this select 0)) additemCargo [""rhsusf_acc_nt4_black"",1];";
+
+};
+
+class US_ARMY_SPC_AEBIAN_02 : US_ARMY_SPC_AEBIAN // Army Aebian Specialist
+{
+	primary[] = {"rhs_weap_M107_w","rhsusf_acc_M8541_mrds","rhsusf_mag_10Rnd_STD_50BMG_mk211"};
+	magazines[] = {"rhsusf_mag_10Rnd_STD_50BMG_mk211",7,"11Rnd_45ACP_Mag",3};
+	postLoadout = "";
+
 };
