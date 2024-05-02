@@ -26,7 +26,7 @@ class US_AIRFORCE_GENERAL : US_ARMY_DEFAULT_UCP // Airforce General (Parade Unif
 class US_AIRFORCE_GENERAL_CU : US_AIRFORCE_GENERAL // AIrfoce Genral (Combat Uniform)
 {
 	uniform[] = {"rhs_uniform_g3_m81"};
-	vest[] = {"rhsusf_plateframe_teamleader"};
+	vest[] = {"rhsusf_iotv_ocp"};
 
 };
 
@@ -35,10 +35,10 @@ class US_AIRFORCE_SECF_LEAD : US_ARMY_DEFAULT_UCP // Airforce Security Forces Le
 	uniform[] = {"rhs_uniform_abu"};
 	vest[] = {"rhsusf_iotv_ucp_Squadleader"};
 	backpack[] = {""};
-	primary[] = {"rhs_weap_m4a1_blockII_M203_d","rhsusf_acc_anpeq15side","rhsusf_acc_eotech_552_d","rhsusf_acc_SFMB556","rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger_Tracer_Red","rhs_mag_M441_HE"};
+	primary[] = {"rhs_weap_m4a1_blockII_M203_bk","rhsusf_acc_anpeq15side_bk","rhsusf_acc_eotech_552","rhsusf_acc_SFMB556","rhs_mag_30Rnd_556x45_Mk318_PMAG","rhs_mag_M441_HE"};
 	secondary[] = {"rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"};
 	launcher[] = {""};
-	magazines[] = {"rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger_Tracer_Red",8,"rhs_mag_m18_red",2,"rhsusf_mag_15Rnd_9x19_JHP",2,"rhs_mag_m713_Red",4,"rhs_mag_M441_HE",3,"UGL_FlareRed_F",2};
+	magazines[] = {"rhs_mag_30Rnd_556x45_Mk318_PMAG",8,"rhs_mag_m18_red",2,"rhsusf_mag_15Rnd_9x19_JHP",2,"rhs_mag_m713_Red",4,"rhs_mag_M441_HE",3,"UGL_FlareRed_F",2};
 	items[] += {"ACE_packingBandage",2,"ACE_fieldDressing",2,"ACE_EarPlugs",1};
 	lrradios[] =  {"ACRE_PRC148"};
 	binoculars[] = {"rhsusf_bino_lerca_1200_tan"};
@@ -56,20 +56,22 @@ class US_AIRFORCE_SECF_RFL : US_AIRFORCE_SECF_LEAD // Airforce Security Forces R
 	uniform[] = {"rhs_uniform_abu"};
 	vest[] = {"rhsusf_iotv_ucp_Rifleman"};
 	backpack[] = {""};
-	primary[] = {"rhs_weap_m4a1_blockII_d","rhsusf_acc_SFMB556","rhsusf_acc_anpeq15side","rhsusf_acc_eotech_552_d","rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger_Tracer_Red"};
+	primary[] = {"rhs_weap_m4a1_blockII_bk","rhsusf_acc_SFMB556","rhsusf_acc_anpeq15side_bk","rhsusf_acc_eotech_552","rhs_mag_30Rnd_556x45_Mk318_PMAG"};
 	secondary[] = {"rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"};
 	launcher[] = {""};
-	magazines[] = {"rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger_Tracer_Red",8,"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_m18_red",2,"rhsusf_mag_15Rnd_9x19_JHP",2};};
+	magazines[] = {"rhs_mag_30Rnd_556x45_Mk318_PMAG",8,"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_m18_red",2,"rhsusf_mag_15Rnd_9x19_JHP",2};
+	headgear[] = {"rhsusf_ach_helmet_headset_ess_ucp_alt","rhssaf_beret_black","rhsusf_ach_helmet_headset_ess_ucp_alt"};
+};
 
 class US_AIRFORCE_SECF_SNP : US_AIRFORCE_SECF_LEAD // Airforce Security Forces Sniper
 {
 	uniform[] = {"rhs_uniform_abu"};
 	vest[] = {"rhsusf_iotv_ucp_SAW"};
 	backpack[] = {""};
-	primary[] = {"rhs_weap_m24sws_d","rhsusf_acc_m24_muzzlehider_d","rhsusf_acc_M8541_low_d","rhsusf_5Rnd_762x51_m118_special_Mag","rhsusf_acc_harris_swivel"};
+	primary[] = {"rhs_weap_m40a5","rhsusf_acc_anpeq16a","rhsusf_acc_M8541_low_wd","rhsusf_10Rnd_762x51_m993_Mag","rhsusf_acc_harris_swivel"};
 	secondary[] = {"rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"};
 	launcher[] = {""};
-	magazines[] = {"rhsusf_5Rnd_762x51_m993_Mag",8,"rhsusf_5Rnd_762x51_m118_special_Mag",6,"rhsusf_mag_15Rnd_9x19_JHP",5};
+	magazines[] = {"rhsusf_10Rnd_762x51_m993_Mag",10,"rhsusf_mag_15Rnd_9x19_JHP",5};
 	items[] += {"ACE_packingBandage",2,"ACE_fieldDressing",2,"rhs_mag_m18_red",2};
 };
 
@@ -142,7 +144,8 @@ class US_AIRFORCE_STARGATE03_TL : CommonAmerica // Airforce Stargate 03 Team-Lea
 	map[] = {"ItemMap"};
 	nvgs[] = {""};
 	watch[] = {"ChemicalDetector_01_watch_F"};
-	preLoadout = "[(_this select 0),""Stargate03""] call bis_fnc_setUnitInsignia; (_this select 0) setVariable [""ACE_GForceCoef"",0];(_this select 0) setVariable [""ACE_medical_medicClass"", 1, true];";
+	insignia[] = {"Stargate03"};
+	preLoadout = "(_this select 0) setVariable [""ACE_GForceCoef"",0];(_this select 0) setVariable [""ACE_medical_medicClass"", 1, true];";
 };	
 
 class US_AIRFORCE_STARGATE03_TL_WDL : US_AIRFORCE_STARGATE03_TL // Airforce Stargate 03 Team-Lead [WDL]

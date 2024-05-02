@@ -38,6 +38,7 @@ class Poppy {
     class atomics {
         file = "Poppy\functions\atomics";
         class replaceBackpack {};
+        class replaceBPContent {};
         class replaceBinoculars {};
         class replaceCompass {};
         class replaceGoggles {};

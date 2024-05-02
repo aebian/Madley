@@ -24,7 +24,7 @@
 #define LOADOUT_INDEXES [ \
     "uniform", "vest", "backpack", \
     "primary", "secondary", "launcher", \
-    "magazines", "items", \
+    "magazines", "items", "bpcontent", \
     "binoculars", "compass", "goggles", \
     "gps", "headgear", "map", \
     "nvgs", "watch", \

@@ -306,9 +306,9 @@ class US_ARMY_UAASA : US_ARMY_OAASA // Army [AA-Specialist Assistant] UCP
 class US_ARMY_OENG : US_ARMY_ORFL // Army [Engineer] OCP
 {
 	vest[] = {"rhsusf_iotv_ocp_Repair"};
+	bpcontent[] = {"ToolKit",1,"ACE_wirecutter",1,"MineDetector",1,"ACE_EntrenchingTool",2,"ACE_CableTie",6,"APERSMineDispenser_Mag",1};
 	items[] = {"ACE_quikclot",2,"ACE_fieldDressing",2,"ACE_packingBandage",2,"ACE_tourniquet",2,"rhs_mag_m67",2,"rhs_mag_m18_purple",1};
 	preLoadout = "(_this select 0) setVariable [""ACE_IsEngineer"",1,true];";
-   	postLoadout = "(unitbackPack (_this select 0)) additemCargo [""ToolKit"",1];(unitbackPack (_this select 0)) additemCargo [""ACE_wirecutter"",1];(unitbackPack (_this select 0)) additemCargo [""MineDetector"",1];(unitbackPack (_this select 0)) additemCargo [""ACE_EntrenchingTool"",2];(unitbackPack (_this select 0)) additemCargo [""ACE_CableTie"",6];(unitbackPack (_this select 0)) additemCargo [""APERSMineDispenser_Mag"",1];";
 };
 
 class US_ARMY_UENG : US_ARMY_OENG // Army [Engineer] UCP
@@ -450,11 +450,11 @@ class US_ARMY_RANGER_SNP : US_ARMY_RANGER_RFL // US Army Ranger (Sniper)
 {
 	uniform[] = {"rhs_uniform_g3_mc"};
 	vest[] = {"rhsusf_mbav_rifleman"};
+	bpcontent[] = {"rhsusf_acc_eotech_552_d",1,"ACE_CableTie",2,"ACE_bodyBag_blue",2,"ACE_Kestrel4500",1,"ACE_MapTools",1,"ACE_RangeCard",1,"ACE_PlottingBoard",1,"ACE_rope6",1,"ACE_SpottingScope",1,"ACE_Flashlight_KSF1",1,"ACE_DAGR",1,"ACE_ATragMX",1,"ACE_EntrenchingTool",1};
 	primary[] = {"rhs_weap_XM2010_sa","rhsusf_acc_M2010S","rhsusf_acc_anpeq15side","rhsusf_acc_M8541_wd","bipod_02_F_hex","rhsusf_5Rnd_300winmag_xm2010"};
 	launcher[] = {""};
 	magazines[] = {"rhsusf_5Rnd_300winmag_xm2010",15,"11Rnd_45ACP_Mag",4};
 	items[] += {};
-	postLoadout = "(unitbackPack (_this select 0)) addItemCargoGlobal [""rhsusf_acc_eotech_552_d"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_CableTie"",2];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_bodyBag_blue"",2];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_Kestrel4500"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_MapTools"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_RangeCard"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_PlottingBoard"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_rope6"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_SpottingScope"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_Flashlight_KSF1"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_DAGR"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_ATragMX"",1];(unitbackPack (_this select 0)) addItemCargoGlobal [""ACE_EntrenchingTool"",1];";
 };
 
 class US_ARMY_RANGER_SNP_AM : US_ARMY_RANGER_SNP // US Army Ranger (Sniper - Anti Material)
@@ -627,22 +627,25 @@ class US_ARMY_JPLT : US_ARMY_DEFAULT_UCP // Army Jet Pilot
 	preLoadout = "(_this select 0) setVariable [""ACE_GForceCoef"",0]";
 };
 
-class US_ARMY_SPC_AEBIAN : US_ARMY_SPC_SNIPER // Army Aebian Specialist
+class US_ARMY_EOD_LEAD : US_ARMY_SPC_SNIPER // Army EOD Leader
 {
 	uniform[] = {"rhs_uniform_g3_m81"};
 	vest[] = {"V_PlateCarrier1_rgr"};
 	backpack[] = {"B_Kitbag_sgg"};
+	bpcontent[] = {"MineDetector",1,"rhsusf_m112_mag",4,"ToolKit",1,"ACE_DefusalKit",1,"ACE_Fortify",1};
 	primary[] = {"rhs_weap_mk18_KAC_wd","rhsusf_acc_anpeq15side","rhsusf_acc_ACOG3","rhsusf_acc_SF3P556","rhs_mag_30Rnd_556x45_M196_Stanag_Tracer_Red"};
 	magazines[] = {"rhs_mag_30Rnd_556x45_M196_Stanag_Tracer_Red",8,"11Rnd_45ACP_Mag",3};
 	goggles[] = {""};
+	watch[] = {"ChemicalDetector_01_watch_F"};
 	headgear[] = {"rhsusf_ach_bare_headset_ess"};
-	preLoadout = "(_this select 0) setVariable [""ACE_GForceCoef"",0];(_this select 0) setVariable [""ACE_medical_medicClass"",1,true];(_this select 0) setVariable [""ACE_IsEngineer"",2,true];(_this select 0) allowDamage false;";
+	preLoadout = "(_this select 0) setVariable [""ACE_medical_medicClass"",1,true];(_this select 0) setVariable [""ACE_IsEngineer"",2,true];";
 	postLoadout = "(unitbackPack (_this select 0)) additemCargo [""rhsusf_acc_nt4_black"",1];";
 
 };
 
-class US_ARMY_SPC_AEBIAN_02 : US_ARMY_SPC_AEBIAN // Army Aebian Specialist
+class US_ARMY_EOD_SNP : US_ARMY_EOD_LEAD // Army EOD with Barret
 {
+	bpcontent[] = {"MineDetector",1,"ACE_DefusalKit",1};
 	primary[] = {"rhs_weap_M107_w","rhsusf_acc_M8541_mrds","rhsusf_mag_10Rnd_STD_50BMG_mk211"};
 	magazines[] = {"rhsusf_mag_10Rnd_STD_50BMG_mk211",7,"11Rnd_45ACP_Mag",3};
 	postLoadout = "";
