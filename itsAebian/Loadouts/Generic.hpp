@@ -124,36 +124,37 @@ class Inferno_TL : CommonIndependet // Inferno Squad Team-Lead
 {
 	uniform[] = {"rhs_uniform_g3_blk"};
 	vest[] = {"V_PlateCarrier2_blk"};
-	backpack[] = {""};
-	primary[] = {"arifle_MSBS65_black_F","muzzle_snds_65_TI_blk_F","acc_pointer_IR","optic_Hamr","30Rnd_65x39_caseless_msbs_mag_Tracer"};
+	backpack[] = {"B_LegStrapBag_black_F"};
+	primary[] = {"rhs_weap_asval_grip1","rhs_acc_perst1ik_ris","rhs_acc_pso1m21","rhs_30rnd_9x39mm_SP6_SR3","rhs_acc_grip_ffg2"};
 	secondary[] = {"hgun_Pistol_heavy_01_green_F","muzzle_snds_acp","optic_MRD_black","11Rnd_45ACP_Mag"};
 	launcher[] = {""};
-	magazines[] = {"11Rnd_45ACP_Mag",2,"30Rnd_65x39_caseless_msbs_mag_Tracer",12,"Laserbatteries",2};
-	items[] = {"ACE_EarPlugs",1,"rhs_mag_fakel",1};
+	magazines[] = {"11Rnd_45ACP_Mag",2,"rhs_30rnd_9x39mm_SP6_SR3",16,"Laserbatteries",2};
+	items[] = {"ACE_EarPlugs",1,"rhs_mag_fakel",1,"ACE_quikclot",4,"ACE_fieldDressing",4,"ACE_packingBandage",4,"ACE_tourniquet",2};
 	binoculars[] = {"Laserdesignator_03"};
 	compass[] = {"ItemCompass"};
-	goggles[] = {"rhsusf_shemagh_od"};
+	goggles[] = {"G_Balaclava_TI_blk_F"};
 	gps[] = {"ItemGPS"};
 	headgear[] = {"rhsusf_hgu56p_visor_mask_Empire_black"};
 	map[] = {"ItemMap"};
 	nvgs[] = {"NVGogglesB_blk_F"};
 	watch[] = {"ACE_Altimeter"};
-	preLoadout = "[(_this select 0),""InfernoSquad""] call bis_fnc_setUnitInsignia;";
+	insignia[] = {"InfernoSquad"};
+	preLoadout = "(_this select 0) addEventHandler [""HandleDamage"", {0.1}];";
 };
 
 class Inferno_LR : Inferno_TL // Inferno Squad Long-Range Soldier
 {
-	primary[] = {"arifle_MSBS65_Mark_black_F","muzzle_snds_65_TI_blk_F","acc_pointer_IR","optic_Hamr","30Rnd_65x39_caseless_msbs_mag_Tracer"};
-	preLoadout = "[(_this select 0),""InfernoSquad""] call bis_fnc_setUnitInsignia;";};
+	primary[] = {"rhs_weap_ak105_zenitco01_grip1","rhs_acc_tgpa","rhs_acc_perst1ik_ris","rhs_acc_pso1m21","rhs_60Rnd_545X39_7N22_AK","rhs_acc_grip_ffg2"};
+	magazines[] = {"11Rnd_45ACP_Mag",2,"rhs_60Rnd_545X39_7N22_AK",12,"Laserbatteries",2};
+};
 
-class Inferno_HW : Inferno_TL // Inferno Squad Heavy-Weapon Soldier
+class Inferno_HW : Inferno_LR // Inferno Squad Heavy-Weapon Soldier
 {
-	backpack[] = {"B_LegStrapBag_black_F"};
-	primary[] = {"arifle_RPK12_F","muzzle_snds_B","optic_Hamr","rhs_75Rnd_762x39mm_tracer"};
+	primary[] = {"rhs_weap_rpk74m","rhs_acc_tgpa","rhs_acc_perst1ik","rhs_acc_pso1m21","rhs_60Rnd_545X39_7N22_AK"};
 	secondary[] = {"hgun_Pistol_heavy_01_green_F","muzzle_snds_acp","optic_MRD_black","11Rnd_45ACP_Mag"};
 	launcher[] = {""};
-	magazines[] = {"11Rnd_45ACP_Mag",2,"rhs_75Rnd_762x39mm_tracer",5};
-	preLoadout = "[(_this select 0),""InfernoSquad""] call bis_fnc_setUnitInsignia;";
+	magazines[] = {"11Rnd_45ACP_Mag",2,"rhs_60Rnd_545X39_7N22_AK",14};
+	insignia[] = {"InfernoSquad"};
 };
 
 

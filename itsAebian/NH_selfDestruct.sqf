@@ -29,10 +29,10 @@ switch (_cond) do
 	_holdAction = [ 
 		_nukeObject, 
 		"Activate Self-Destruct", 
-		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_destroy_ca.paa", 
-		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_destroy_ca.paa", 
-		"_this distance _target < 3", 
-		"_caller distance _target < 3", 
+		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", 
+		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", 
+		"_this distance _target < 4", 
+		"_caller distance _target < 4", 
 		{}, 
 		{}, 
 		{ 
@@ -91,7 +91,7 @@ switch (_cond) do
 		_nukeObject setVariable ["NH_selfDestruct", "DETONATED"];    
 		
 		[_origin, _radius] call rhs_fnc_ss21_nuke;
-		{_x setdamage 1} foreach nearestObjects [_origin, ["house"], _radius];
+		{_x setdamage 1} foreach nearestObjects [_origin, ["Car","Tank","house","Truck"], _radius];
 
 	};
 };
