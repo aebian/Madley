@@ -174,7 +174,7 @@ class US_MARINES_RFL_AT : US_MARINES_DEFAULT_FROGWD // Marines [Rifleman Anti-Ta
 	watch[] = {"ACE_Altimeter"};
 };
 
-class US_MARINES_MXM : US_MARINES_DEFAULT_FROGWD // Marines [Rifleman]
+class US_MARINES_MXM : US_MARINES_DEFAULT_FROGWD // Marines [Marksman]
 {
 	uniform[] = {"rhs_uniform_FROG01_wd"};
 	vest[] = {"rhsusf_spc_marksman"};
@@ -190,6 +190,13 @@ class US_MARINES_MXM : US_MARINES_DEFAULT_FROGWD // Marines [Rifleman]
 	map[] = {""};
 	watch[] = {"ACE_Altimeter"};
 };
+
+class US_MARINES_TDO : US_MARINES_FTL // Marines [Team Drone Operator]
+{
+	backpack[] = {"B_UAV_01_backpack_F"};
+	lrradios[] =  {"ACRE_PRC148"};
+
+}
 
 class US_MARINES_WSL : US_MARINES_DEFAULT_FROGWD // Marines [Weapon Squad Leader]
 {
@@ -298,9 +305,30 @@ class US_MARINES_PLT : US_MARINES_DEFAULT_FROGWD // Marines Pilot with HGU-65
 	preLoadout = "(_this select 0) setVariable [""ACE_GForceCoef"", 0]";
 };
 
-class US_MARINES_DOORGUNNER : US_MARINES_PLT 
+class US_MARINES_DOORGUNNER : US_MARINES_PLT // Marines Doorgunner
 {
 	primary[] = {"rhs_weap_mk18_KAC_wd", "rhsusf_acc_anpeq15A", "rhsusf_acc_eotech_552_wd","rhs_mag_30Rnd_556x45_M855A1_Stanag"};
 	magazines[] = {"rhs_mag_30Rnd_556x45_M855A1_Stanag",4 };
 	headgear[] = {"rhsusf_hgu56p_visor_mask_tan"};
+};
+
+class US_MARINES_VHC : US_MARINES_DEFAULT_FROGWD // Vehicle Crew
+{
+	vest[] = {"rhsusf_spc_crewman"};
+	backpack[] = {""};
+	primary[] = {"rhs_weap_m4a1_blockII_KAC_wd","rhs_acc_1p87","rhs_mag_30Rnd_556x45_M193_Stanag"};
+	secondary[] = {"rhsusf_weap_m9"};
+	launcher[] = {""};
+	magazines[] = {"rhs_mag_30Rnd_556x45_M193_Stanag",3,"rhsusf_mag_15Rnd_9x19_FMJ",2 };
+	items[] += {"ACE_packingBandage",5,"ACE_quikclot",5,"ACE_tourniquet",2,"rhs_mag_m18_purple",3};
+	lrradios[] =  {"ACRE_PRC148","ACRE_PRC148"};
+	binoculars[] = {"lerca_1200_tan"};
+	compass[] = {"ItemCompass"};
+	goggles[] = {"rhsusf_shemagh2_gogg_tan"};
+	gps[] = {"ItemGPS"};
+	headgear[] = {"rhsusf_cvc_green_alt_helmet","rhsusf_cvc_green_ess"};
+	map[] = {"ItemMap"};
+	nvgs[] = {"rhsusf_ANPVS_15"};
+	watch[] = {"ACE_Altimeter"};
+	preLoadout = "(_this select 0) setVariable [""ACE_IsEngineer"",1,true];";
 };
