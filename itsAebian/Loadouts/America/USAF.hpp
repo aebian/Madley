@@ -161,7 +161,7 @@ class US_AIRFORCE_STARGATE03_RFL : US_AIRFORCE_STARGATE03_TL // Airforce Stargat
 {
 	headgear[] = {"H_Watchcap_khk"};
 	primary[] = {"rhs_weap_hk416d10_LMT_grip3","rhsusf_acc_eotech_552","rhsusf_acc_anpeq15A","rhs_mag_30Rnd_556x45_Mk318_PMAG"};
-	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_30Rnd_556x45_M193_Stanag",6};
+	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_30Rnd_556x45_Mk318_PMAG",6};
 	items[] = {"ACE_packingBandage",6,"ACE_quikclot",6,"ACE_tourniquet",2};
 	binoculars[] = {""};
 	preLoadout = "[(_this select 0),""Stargate03""] call bis_fnc_setUnitInsignia; (_this select 0) setVariable [""ACE_GForceCoef"",0]";
@@ -178,7 +178,7 @@ class US_AIRFORCE_STARGATE03_RFL_WDL : US_AIRFORCE_STARGATE03_RFL // Airforce St
 class US_AIRFORCE_STARGATE03_MG : US_AIRFORCE_STARGATE03_RFL // Airforce Stargate 03 Member
 {
 	primary[] = {"rhs_weap_m27iar_grip3","rhsusf_acc_SF3P556","rhsusf_acc_anpeq15A", "rhsusf_acc_ACOG_3d", "rhs_mag_30Rnd_556x45_Mk318_PMAG"};
-	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_30Rnd_556x45_M193_Stanag",8};
+	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_30Rnd_556x45_Mk318_PMAG",8};
 	headgear[] = {"H_Watchcap_khk"};
 };
 
