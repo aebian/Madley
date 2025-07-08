@@ -177,8 +177,8 @@ class US_AIRFORCE_STARGATE03_RFL_WDL : US_AIRFORCE_STARGATE03_RFL // Airforce St
 
 class US_AIRFORCE_STARGATE03_MG : US_AIRFORCE_STARGATE03_RFL // Airforce Stargate 03 Member
 {
-	primary[] = {"rhs_weap_m27iar_grip3","rhsusf_acc_SF3P556","rhsusf_acc_anpeq15A", "rhsusf_acc_ACOG_3d", "rhs_mag_30Rnd_556x45_Mk318_PMAG"};
-	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_30Rnd_556x45_Mk318_PMAG",8};
+	primary[] = {"rhs_weap_m27iar_grip3","rhsusf_acc_SF3P556","rhsusf_acc_anpeq15A", "rhsusf_acc_ACOG_3d", "rhs_mag_100Rnd_556x45_Mk318_cmag"};
+	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_100Rnd_556x45_Mk318_cmag","rhs_mag_30Rnd_556x45_Mk318_PMAG",6};
 	headgear[] = {"H_Watchcap_khk"};
 };
 
