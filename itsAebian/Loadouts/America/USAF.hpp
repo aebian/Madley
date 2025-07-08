@@ -130,7 +130,7 @@ class US_AIRFORCE_STARGATE03_TL : CommonAmerica // Airforce Stargate 03 Team-Lea
 	uniform[] = {"rhs_uniform_g3_mc"};
 	vest[] = {"V_PlateCarrier2_blk"};
 	backpack[] = {""};
-	primary[] = {"rhs_weap_m16a4_imod_M203","rhsusf_acc_anpeq15A","rhsusf_acc_eotech_552","rhs_mag_30Rnd_556x45_Mk318_PMAG","rhs_mag_M397_HET"};
+	primary[] = {"rhs_weap_hk416d145_m320","rhsusf_acc_anpeq15A","rhsusf_acc_eotech_552","rhs_mag_30Rnd_556x45_Mk318_PMAG","rhs_mag_M397_HET"};
 	secondary[] = {"rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"};
 	launcher[] = {""};
 	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_30Rnd_556x45_Mk318_PMAG",10,"rhs_mag_M397_HET",3};
@@ -160,8 +160,8 @@ class US_AIRFORCE_STARGATE03_TL_WDL : US_AIRFORCE_STARGATE03_TL // Airforce Star
 class US_AIRFORCE_STARGATE03_RFL : US_AIRFORCE_STARGATE03_TL // Airforce Stargate 03 Member
 {
 	headgear[] = {"H_Watchcap_khk"};
-	primary[] = {"SMG_03C_black","rhsusf_acc_anpeq15A","50Rnd_570x28_SMG_03"};
-	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"50Rnd_570x28_SMG_03",11};
+	primary[] = {"rhs_weap_hk416d10_LMT_grip3","rhsusf_acc_eotech_552","rhsusf_acc_anpeq15A","rhs_mag_30Rnd_556x45_Mk318_PMAG"};
+	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_30Rnd_556x45_M193_Stanag",6};
 	items[] = {"ACE_packingBandage",6,"ACE_quikclot",6,"ACE_tourniquet",2};
 	binoculars[] = {""};
 	preLoadout = "[(_this select 0),""Stargate03""] call bis_fnc_setUnitInsignia; (_this select 0) setVariable [""ACE_GForceCoef"",0]";
@@ -177,8 +177,8 @@ class US_AIRFORCE_STARGATE03_RFL_WDL : US_AIRFORCE_STARGATE03_RFL // Airforce St
 
 class US_AIRFORCE_STARGATE03_MG : US_AIRFORCE_STARGATE03_RFL // Airforce Stargate 03 Member
 {
-	primary[] = {"rhs_weap_m249_pip_L_para","rhsusf_acc_SF3P556","rhsusf_acc_anpeq15A", "rhsusf_acc_ACOG_3d", "rhsusf_200Rnd_556x45_soft_pouch"};
-	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhsusf_200Rnd_556x45_soft_pouch",2};
+	primary[] = {"rhs_weap_m27iar_grip3","rhsusf_acc_SF3P556","rhsusf_acc_anpeq15A", "rhsusf_acc_ACOG_3d", "rhs_mag_30Rnd_556x45_Mk318_PMAG"};
+	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_30Rnd_556x45_M193_Stanag",8};
 	headgear[] = {"H_Watchcap_khk"};
 };
 
@@ -199,7 +199,7 @@ class US_AIRFORCE_STARGATE23_TL_WDL : US_AIRFORCE_STARGATE03_TL_WDL // Airforce 
 	backpack[] = {"B_Kitbag_sgg"};
 };
 
-class US_AIRFORCE_STARGATE23_RFL_WDL : US_AIRFORCE_STARGATE23_TL_WDL // Airforce Stargate 23 Leader
+class US_AIRFORCE_STARGATE23_RFL_WDL : US_AIRFORCE_STARGATE23_TL_WDL // Airforce Stargate 23 Rifleman
 {
 	primary[] = {"rhs_weap_mk18_KAC_wd","rhsusf_acc_anpeq15A","rhsusf_acc_eotech_552","rhs_mag_30Rnd_556x45_Mk318_PMAG"};
 	magazines[] = {"rhsusf_mag_15Rnd_9x19_JHP",3,"rhs_mag_30Rnd_556x45_Mk318_PMAG",5};
