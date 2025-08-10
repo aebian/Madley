@@ -249,3 +249,32 @@ class US_AIRFORCE_STARGATE_MED_NG_WDL : US_AIRFORCE_STARGATE_MED_NG // Airforce 
 	uniform[] = {"rhs_uniform_bdu_erdl"};
 	postLoadout = "(_this select 0) action [""SwitchWeapon"", (_this select 0), (_this select 0), 100];";
 };
+
+
+class US_AIRFORCE_STARGATE_JTAC : CommonAmerica // Airforce Stargate JTAC
+{
+	uniform[] = {"rhs_uniform_g3_mc"};
+	vest[] = {"V_PlateCarrier2_blk"};
+	backpack[] = {"rhsusf_falconii_mc"};
+	primary[] = {"rhs_weap_m4_m203","rhsusf_acc_SF3P556","rhsusf_acc_anpeq15A","rhsusf_acc_ACOG_RMR","rhs_mag_30Rnd_556x45_Mk318_PMAG","rhs_mag_M397_HET"};
+	secondary[] = {"rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"};
+	launcher[] = {""};
+	magazines[] = {"rhs_mag_30Rnd_556x45_Mk318_PMAG",6,"rhsusf_mag_15Rnd_9x19_JHP",2,"rhs_mag_M397_HET",2};
+	items[] = {"ACE_quikclot",2,"ACE_fieldDressing",2,"ACE_packingBandage",2,"ACE_tourniquet",2,"Laserbatteries",1,"rhs_mag_m18_green",3,"rhs_mag_m18_purple",3,"rhs_mag_m18_red",3,"rhs_mag_m18_yellow",3,"rhs_mag_m713_Red",3,"rhs_mag_m716_yellow",3,"rhs_mag_m715_Green",3};
+	lrradios[] =  {"ACRE_PRC148","ACRE_PRC148"};
+	binoculars[] = {"Laserdesignator"};
+	compass[] = {"ItemCompass"};
+	goggles[] = {"rhsusf_shemagh2_gogg_od"};
+	gps[] = {"B_UavTerminal"};
+	headgear[] = {"rhsusf_opscore_fg_pelt_cam"};
+	map[] = {"ItemMap"};
+	nvgs[] = {"rhsusf_ANPVS_14"};
+	watch[] = {"ChemicalDetector_01_watch_F"};
+	preLoadout = "(_this select 0) setVariable [""ACE_GForceCoef"",0];(_this select 0) setVariable [""ACE_medical_medicClass"", 1, true];";
+};	
+
+class US_AIRFORCE_STARGATE_JTAC_WDL : US_AIRFORCE_STARGATE_JTAC
+{
+	uniform[] = {"rhs_uniform_bdu_erdl"};
+	backpack[] = {"rhsusf_falconii"};
+};

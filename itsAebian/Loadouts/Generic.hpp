@@ -125,10 +125,10 @@ class Inferno_TL : CommonIndependet // Inferno Squad Team-Lead
 	uniform[] = {"rhs_uniform_g3_blk"};
 	vest[] = {"V_PlateCarrier2_blk"};
 	backpack[] = {"B_LegStrapBag_black_F"};
-	primary[] = {"rhs_weap_asval_grip1","rhs_acc_perst1ik_ris","rhs_acc_pso1m21","rhs_30rnd_9x39mm_SP6_SR3","rhs_acc_grip_ffg2"};
+	primary[] = {"rhs_weap_aks74n_2_npz","rhs_acc_perst1ik","rhs_acc_rakursPM","rhs_30Rnd_545x39_7N22_plum_AK","rhs_acc_tgpa"};
 	secondary[] = {"hgun_Pistol_heavy_01_green_F","muzzle_snds_acp","optic_MRD_black","11Rnd_45ACP_Mag"};
 	launcher[] = {""};
-	magazines[] = {"11Rnd_45ACP_Mag",2,"rhs_30rnd_9x39mm_SP6_SR3",16,"Laserbatteries",2};
+	magazines[] = {"11Rnd_45ACP_Mag",2,"rhs_30Rnd_545x39_7N22_plum_AK",10,"Laserbatteries",2};
 	items[] = {"ACE_EarPlugs",1,"rhs_mag_fakel",1,"ACE_quikclot",4,"ACE_fieldDressing",4,"ACE_packingBandage",4,"ACE_tourniquet",2};
 	binoculars[] = {"Laserdesignator_03"};
 	compass[] = {"ItemCompass"};
@@ -139,7 +139,7 @@ class Inferno_TL : CommonIndependet // Inferno Squad Team-Lead
 	nvgs[] = {"NVGogglesB_blk_F"};
 	watch[] = {"ACE_Altimeter"};
 	insignia[] = {"InfernoSquad"};
-	preLoadout = "(_this select 0) addEventHandler [""HandleDamage"", {0.1}];";
+	preLoadout = "[(_this select 0), 0.01] execVM ""itsAebian\NH_healthModifier.sqf""";
 };
 
 class Inferno_LR : Inferno_TL // Inferno Squad Long-Range Soldier
@@ -155,6 +155,35 @@ class Inferno_HW : Inferno_LR // Inferno Squad Heavy-Weapon Soldier
 	launcher[] = {""};
 	magazines[] = {"11Rnd_45ACP_Mag",2,"rhs_60Rnd_545X39_7N22_AK",14};
 	insignia[] = {"InfernoSquad"};
+};
+
+class Noxfire_TL : CommonIndependet // Noxfire Group Team-Lead
+{
+	uniform[] = {"rhs_uniform_g3_blk"};
+	vest[] = {"V_PlateCarrier2_blk"};
+	backpack[] = {"B_LegStrapBag_black_F"};
+	primary[] = {"rhs_weap_vhsk2","rhsusf_acc_nt4_black","rhsusf_acc_anpeq15side_bk","rhsusf_acc_eotech_552","rhssaf_30rnd_556x45_SOST_G36"};
+	secondary[] = {"hgun_Pistol_heavy_01_green_F","muzzle_snds_acp","optic_MRD_black","11Rnd_45ACP_Mag"};
+	launcher[] = {""};
+	magazines[] = {"11Rnd_45ACP_Mag",3,"rhssaf_30rnd_556x45_SOST_G36",9,"Laserbatteries",2};
+	items[] = {"ACE_EarPlugs",1,"rhs_mag_fakel",1,"ACE_quikclot",4,"ACE_fieldDressing",4,"ACE_packingBandage",4,"ACE_tourniquet",2};
+	binoculars[] = {"Laserdesignator_03"};
+	lrradios[] =  {"ACRE_PRC148"};
+	compass[] = {"ItemCompass"};
+	goggles[] = {"G_Balaclava_TI_blk_F"};
+	gps[] = {"B_UavTerminal"};
+	headgear[] = {"rhsusf_hgu56p_visor_mask_Empire_black"};
+	map[] = {"ItemMap"};
+	nvgs[] = {"NVGogglesB_blk_F"};
+	watch[] = {"ACE_Altimeter"};
+	insignia[] = {"NoxfireGroup"};
+	preLoadout = "[(_this select 0), 0.001] execVM ""itsAebian\NH_healthModifier.sqf""";
+};
+
+class Noxfire_OP : Noxfire_TL // Noxfire Group Operator
+{
+	primary[] = {"rhs_weap_vhsd2","rhsusf_acc_nt4_black","rhsusf_acc_anpeq15side_bk","rhsusf_acc_su230_mrds","rhssaf_30rnd_556x45_SOST_G36"};
+	magazines[] = {"11Rnd_45ACP_Mag",2,"rhssaf_30rnd_556x45_SOST_G36",12,"Laserbatteries",2};
 };
 
 

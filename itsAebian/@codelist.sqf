@@ -233,6 +233,23 @@ vectorPos = [vectorDir (get3DENSelected "object" select 0), vectorUp (get3DENSel
 comment "Return array of numbers for setVectorDirAndUp relative to the base objects position.";
 vectorPosRel = [(get3DENSelected "object" select 0) vectorWorldToModel vectorDir (get3DENSelected "object" select 1), (get3DENSelected "object" select 0) vectorWorldToModel vectorUp (get3DENSelected "object" select 1)]; copyToClipboard (str (vectorPosRel));
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+comment "Rotate selected objects 180 degrees";
+{_x set3DENAttribute ["rotation", [(_x get3DENAttribute "rotation" select 0 select 0), (_x get3DENAttribute "rotation" select 0 select 1), ((_x get3DENAttribute "rotation" select 0 select 2) + 180)]]} forEach get3DENSelected "object";
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+comment "Rotate selected objects 90 degrees";
+_sel = get3DENSelected "object"; _center = [0,0,0]; {_center = _center vectorAdd (getPosATL _x)} forEach _sel; _center = _center vectorMultiply (1/(count _sel)); {_relPos = (getPosATL _x) vectorDiff _center; _newPos = [(_relPos select 1), -(_relPos select 0), _relPos select 2]; _x set3DENAttribute ["position", _center vectorAdd _newPos]; _x set3DENAttribute ["rotation", [(_x get3DENAttribute "rotation" select 0 select 0), (_x get3DENAttribute "rotation" select 0 select 1), ((_x get3DENAttribute "rotation" select 0 select 2) + 90)]]} forEach _sel;
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+comment "Copy selected object and move it on the Y-Axis by its height";
+_obj = get3DENSelected "object" select 0; _pos = getPosASL _obj;_rot = _obj get3DENAttribute "rotation" select 0;_bbox = boundingBoxReal _obj; _ySize = abs((_bbox select 1 select 1) - (_bbox select 0 select 1));_newPos = [_pos select 0, (_pos select 1) + _ySize, _pos select 2];_newObj = create3DENEntity ["Object", typeOf _obj, _newPos]; 
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+comment "Copy selected object and move it on the Y-Axis by its height 30 times";
+_obj = get3DENSelected "object" select 0; _pos = getPosASL _obj; _rot = _obj get3DENAttribute "rotation" select 0; _bbox = boundingBoxReal _obj; _ySize = abs((_bbox select 1 select 1) - (_bbox select 0 select 1)); for "_i" from 1 to 30 do { _newPos = [_pos select 0, (_pos select 1) + _ySize, _pos select 2]; _newObj = create3DENEntity ["Object", typeOf _obj, _newPos]; _pos = getPosASL _newObj; };
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+comment "Copy selected object and move it on the Y-Axis by its width + model fixes (note the -1.095) ";
+_obj = get3DENSelected "object" select 0; _pos = getPos _obj; _rot = _obj get3DENAttribute "rotation" select 0; _bbox = boundingBoxReal _obj; _ySize = abs((_bbox select 1 select 1) - (_bbox select 0 select 1)); _newPos = [_pos select 0, (_pos select 1) + _ySize - 1.095, _pos select 2]; _newObj = create3DENEntity ["Object", typeOf _obj, _newPos];
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+comment "Copy selected object and move it on the Y-Axis by its width + model fixes (note the -1.095) 30 times";
+_obj = get3DENSelected "object" select 0; _pos = getPos _obj; _rot = _obj get3DENAttribute "rotation" select 0; _bbox = boundingBoxReal _obj; _ySize = abs((_bbox select 1 select 1) - (_bbox select 0 select 1)); for "_i" from 1 to 30 do { _newPos = [_pos select 0, (_pos select 1) + (_ySize - 1.095), _pos select 2]; _newObj = create3DENEntity ["Object", typeOf _obj, _newPos]; _pos = getPos _newObj; };
 
 // RHS (rhsmods.org) - Specific Codes \\
 comment "Will make a RHS Humvee Olive Green";

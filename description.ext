@@ -64,15 +64,21 @@ class CfgUnitInsignia
     class InfernoSquad
     {
       displayName = "Inferno Squad";
-      author = "Knight Industries";
+      author = "nethavn";
       texture = "itsAebian\resources\inferno_squad.paa";
       textureVehicle = "";
     };
-
+    class NoxfireGroup
+    {
+      displayName = "Noxfire Group";
+      author = "nethavn";
+      texture = "itsAebian\resources\noxfire_group.paa";
+      textureVehicle = "";
+    };
     class Stargate03
     {
       displayName = "Team - SG3";
-      author = "Knight Industries";
+      author = "nethavn";
       texture = "itsAebian\resources\stargate_03.paa";
       textureVehicle = "";
     };
