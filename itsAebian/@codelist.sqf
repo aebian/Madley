@@ -3,8 +3,12 @@
 	description: Codelist for ArmA Series
 	returns: depends but useful commands
 	created: 2010-02-05
-	updated: 2020-08-03
+	updated: 2025-08-17
 */
+
+/* !!! INFO!!! */
+comment "This list is no longer maintained. Updates can be foud at https://groupwiki.nethavn.group/books/arma-development/page/codelist-arma"
+/* !!! END !!! */
 
 // Returns & Definitions \\
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -239,6 +243,7 @@ comment "Rotate selected objects 180 degrees";
 comment "Rotate selected objects 90 degrees";
 _sel = get3DENSelected "object"; _center = [0,0,0]; {_center = _center vectorAdd (getPosATL _x)} forEach _sel; _center = _center vectorMultiply (1/(count _sel)); {_relPos = (getPosATL _x) vectorDiff _center; _newPos = [(_relPos select 1), -(_relPos select 0), _relPos select 2]; _x set3DENAttribute ["position", _center vectorAdd _newPos]; _x set3DENAttribute ["rotation", [(_x get3DENAttribute "rotation" select 0 select 0), (_x get3DENAttribute "rotation" select 0 select 1), ((_x get3DENAttribute "rotation" select 0 select 2) + 90)]]} forEach _sel;
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 comment "Copy selected object and move it on the Y-Axis by its width";
 _obj = get3DENSelected "object" select 0; _pos = getPos _obj; _rot = _obj get3DENAttribute "rotation" select 0; _bbox = boundingBoxReal _obj; _ySize = abs((_bbox select 1 select 1) - (_bbox select 0 select 1)); _newPos = [_pos select 0, (_pos select 1) + _ySize, _pos select 2]; _newObj = create3DENEntity ["Object", typeOf _obj, _newPos];
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -250,6 +255,19 @@ _obj = get3DENSelected "object" select 0; _pos = getPos _obj; _rot = _obj get3DE
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 comment "Copy selected object and move it on the Y-Axis by its width + model fixes (note the -1.095) 30 times";
 _obj = get3DENSelected "object" select 0; _pos = getPos _obj; _rot = _obj get3DENAttribute "rotation" select 0; _bbox = boundingBoxReal _obj; _ySize = abs((_bbox select 1 select 1) - (_bbox select 0 select 1)); for "_i" from 1 to 30 do { _newPos = [_pos select 0, (_pos select 1) + (_ySize - 1.095), _pos select 2]; _newObj = create3DENEntity ["Object", typeOf _obj, _newPos]; _pos = getPos _newObj; };
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+comment "Copy selected object and move it on the X-Axis by its width";
+_obj = get3DENSelected "object" select 0; _pos = getPos _obj; _rot = _obj get3DENAttribute "rotation" select 0; _bbox = boundingBoxReal _obj; _xSize = abs((_bbox select 1 select 0) - (_bbox select 0 select 0)); _newPos = [(_pos select 0) + _xSize, _pos select 1, _pos select 2]; _newObj = create3DENEntity ["Object", typeOf _obj, _newPos];
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+comment "Copy selected object and move it on the X-Axis by its width 30 times";
+_obj = get3DENSelected "object" select 0; _pos = getPos _obj; _rot = _obj get3DENAttribute "rotation" select 0; _bbox = boundingBoxReal _obj; _xSize = abs((_bbox select 1 select 0) - (_bbox select 0 select 0)); for "_i" from 1 to 30 do { _newPos = [(_pos select 0) + _xSize, _pos select 1, _pos select 2]; _newObj = create3DENEntity ["Object", typeOf _obj, _newPos]; _pos = getPos _newObj; };
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+comment "Copy selected object and move it on the X-Axis by its width + model fixes (note the -1.095) ";
+_obj = get3DENSelected "object" select 0; _pos = getPos _obj; _rot = _obj get3DENAttribute "rotation" select 0; _bbox = boundingBoxReal _obj; _xSize = abs((_bbox select 1 select 0) - (_bbox select 0 select 0)); _newPos = [(_pos select 0) + _xSize - 1.095, _pos select 1, _pos select 2]; _newObj = create3DENEntity ["Object", typeOf _obj, _newPos];
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+comment "Copy selected object and move it on the X-Axis by its width + model fixes (note the -1.095) 30 times";
+_obj = get3DENSelected "object" select 0; _pos = getPos _obj; _rot = _obj get3DENAttribute "rotation" select 0; _bbox = boundingBoxReal _obj; _xSize = abs((_bbox select 1 select 0) - (_bbox select 0 select 0)); for "_i" from 1 to 30 do { _newPos = [(_pos select 0) + (_xSize - 1.095), _pos select 1, _pos select 2]; _newObj = create3DENEntity ["Object", typeOf _obj, _newPos]; _pos = getPos _newObj; };
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 // RHS (rhsmods.org) - Specific Codes \\
 comment "Will make a RHS Humvee Olive Green";
