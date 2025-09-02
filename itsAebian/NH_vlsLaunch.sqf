@@ -15,7 +15,7 @@ params [
 ];
 
 if (isNull _vls) exitWith { hint "No VLS specified"; };
-if !(typeOf _vls == "B_Ship_MRLS_01_F") exitWith { hint "Invalid VLS type"; };
+if !(typeOf _vls == "B_Ship_MRLS_01_F") exitWith { diag_log "Invalid VLS type"; };
 
 private _muzzle = currentMuzzle gunner _vls;
 private _currentAmmo = _vls ammo _muzzle;
@@ -63,6 +63,7 @@ _vls setVariable [format ["%1_Target", _targetName], _laserTarget];
 
 for "_i" from 1 to _missiles do 
 {
+    waitUntil {_vls weaponReloadingTime [gunner _vls, _muzzle] == 0};
     _vls fireAtTarget [_laserTarget, _muzzle];
     sleep 4;
 };
