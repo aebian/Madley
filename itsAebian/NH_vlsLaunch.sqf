@@ -23,7 +23,7 @@ private _currentAmmo = _vls ammo _muzzle;
 _targetPosAGL = ASLtoAGL _targetPosASL;
 if (_currentAmmo <= 0) exitWith { diag_log format ["VLS: %1 is out of ammo, cannot fire!", vehicleReceiveRemoteTargets _vls]};
 
-private _objTarget = nearestObjects [_targetPosAGL, ["AllVehicles", "StaticWeapon"], _radius];
+private _objTarget = nearestObjects [_targetPosAGL, ["AllVehicles", "StaticWeapon", "House"], _radius];
 private _laserTarget = createVehicle ["laserTargetC", _targetPosAGL, [], 0, "CAN_COLLIDE"];
 
 _laserTarget setPosASL _targetPosASL;
