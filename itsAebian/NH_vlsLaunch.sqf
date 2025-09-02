@@ -40,7 +40,8 @@ _vls setVariable [format ["%1_Target", _targetName], _laserTarget];
 [_vls, ["Fired", {
     params ["_unit", "", "", "", "", "", "_projectile"];
 
-    [_projectile, _unit] spawn {
+    [_projectile, _unit] spawn 
+    {
         params ["_proj", "_vls"];
     
         private _missileTarget = missileTarget _proj;
