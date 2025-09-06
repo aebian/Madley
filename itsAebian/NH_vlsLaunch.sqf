@@ -14,14 +14,21 @@ params [
     ["_radius", 50, [0]]
 ];
 
-if (isNull _vls) exitWith { hint "No VLS specified"; };
-if !(typeOf _vls == "B_Ship_MRLS_01_F") exitWith { diag_log "Invalid VLS type"; };
+if (isNull _vls) exitWith { diag_log "[vlsLaunch] No VLS specified, cannot continue."; };
+if !(typeOf _vls == "B_Ship_MRLS_01_F") exitWith { diag_log "[vlsLaunch] Invalid VLS type, cannot continue."; };
 
 private _muzzle = currentMuzzle gunner _vls;
 private _currentAmmo = _vls ammo _muzzle;
+if (_currentAmmo <= 0) exitWith { diag_log format ["[vlsLaunch] VLS: %1 is out of ammo, cannot fire!", vehicleVarName _vls]};
+
+private _vlsCapacity = _vls getVariable ["VLS_Capacity", _currentAmmo];
+if (_missiles > _vlsCapacity) exitWith { diag_log format ["[vlsLaunch] VLS: %1 cannot fire %2 missiles, current launch capacity is %3", vehicleVarName _vls, _missiles, _vlsCapacity]; };
+
+_vlsCapacity = (_vlsCapacity - _missiles) max 0;
+_vls setVariable ["VLS_Capacity", _vlsCapacity];
+diag_log format ["[vlsLaunch] VLS: %1 has a launch capacity of %2 remaining.", vehicleVarName _vls, _vlsCapacity];
 
 _targetPosAGL = ASLtoAGL _targetPosASL;
-if (_currentAmmo <= 0) exitWith { diag_log format ["VLS: %1 is out of ammo, cannot fire!", vehicleReceiveRemoteTargets _vls]};
 
 private _objTarget = nearestObjects [_targetPosAGL, ["AllVehicles", "StaticWeapon", "House"], _radius];
 private _laserTarget = createVehicle ["laserTargetC", _targetPosAGL, [], 0, "CAN_COLLIDE"];
