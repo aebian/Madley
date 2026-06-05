@@ -102,7 +102,7 @@ class US_AIRFORCE_JPLT : CommonAmerica // Airforce Jet Pilot
 	vest[] = {""};
 	backpack[] = {"B_Parachute"};
 	primary[] = {""};
-	secondary[] = {"rhsusf_weap_glock17g4"};
+	secondary[] = {"rhsusf_weap_glock17g4", "rhsusf_mag_17Rnd_9x19_JHP"};
 	launcher[] = {""};
 	magazines[] = {"rhsusf_mag_17Rnd_9x19_JHP",3};
 	items[] += {"ACE_packingBandage",4,"ACE_quikclot",4,"ACE_tourniquet",2,"rhs_mag_m18_purple",1};
@@ -120,9 +120,20 @@ class US_AIRFORCE_JPLT : CommonAmerica // Airforce Jet Pilot
 
 class US_AIRFORCE_PLT : US_AIRFORCE_JPLT // Airforce Pilot (Transport Aircraft)
 {
-	headgear[] = {"H_Cap_headphones"};
+	uniform[] = {"U_B_HeliPilotCoveralls"};
+	headgear[] = {"rhsusf_bowman_cap"};
 
 };
+
+class US_AIRFORCE_LMST : US_AIRFORCE_PLT // Airforce Loadmaster
+{
+	vest[] = {"V_TacVest_oli"};
+	backpack[] = {""};
+	primary[] = {"rhs_weap_hk416d10_LMT_wd","rhsusf_acc_eotech_552","rhsusf_acc_rvg_de","rhs_mag_30Rnd_556x45_Mk318_PMAG"};
+	magazines[] = {"rhsusf_mag_17Rnd_9x19_JHP",2, "rhs_mag_30Rnd_556x45_Mk318_PMAG",3};
+	headgear[] = {"rhsusf_hgu56p_visor_mask_green"};
+
+}
 
 
 class US_AIRFORCE_STARGATE03_TL : CommonAmerica // Airforce Stargate 03 Team-Lead

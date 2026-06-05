@@ -278,6 +278,7 @@ class US_ARMY_OAAS : US_ARMY_ORFL // Army [AA-Specialist] OCP
 {
 	launcher[] = {"rhs_weap_fim92","rhs_fim92_mag"};
 	magazines[] += {"rhs_fim92_mag",2};
+	backpack[] = {"rhsusf_assault_eagleaiii_ocp"};
 };
 
 class US_ARMY_UAAS : US_ARMY_OAAS // Army [AA-Specialist] UCP

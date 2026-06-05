@@ -92,8 +92,9 @@ class US_ARMY_RANGER_CMDR : US_ARMY_DEFAULT_UCP // US Ranger Commander
 
 class US_ARMY_RANGER_CMDR_ALT : US_ARMY_RANGER_CMDR 
 {
-	primary[] = {"rhs_weap_m249_pip_L_vfg","rhsusf_acc_saw_bipod","rhsusf_acc_anpeq15side","rhsusf_acc_eotech_552_d","rhsusf_200Rnd_556x45_soft_pouch"};
-	magazines[] += {"rhsusf_200Rnd_556x45_soft_pouch",3 };
+	primary[] = {"rhs_weap_SCARH_FDE_CQC","rhsusf_acc_anpeq15side","rhsusf_acc_eotech_552_d","rhsusf_acc_grip2_tan" ,"rhs_mag_20Rnd_SCAR_762x51_m61_ap"};
+	magazines[] += {"rhs_mag_20Rnd_SCAR_762x51_m61_ap",4 };
+	nvgs[] = {"O_NVGoggles_ghex_F"};
 };
 
 class US_ARMY_RANGER_LEAD : US_ARMY_OPL // Army [Element Leader]

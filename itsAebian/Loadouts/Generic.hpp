@@ -290,3 +290,32 @@ class PRIVATE_SECURITY : CommonIndependet // Security Guard (Suit)
 	watch[] = {"ItemWatch"};
 
 }
+
+
+class FIREFIGHTER_COMBAT_LEAD : CommonIndependet // Firefighter (Lead)
+{
+	uniform[] = {"U_C_FirefighterFatigues_RF"};
+	vest[] = {"V_PlateCarrier2_blk"};
+	backpack[] = {""};
+	primary[] = {""};
+	secondary[] = {"rhsusf_weap_glock17g4","acc_flashlight_pistol","rhsusf_mag_17Rnd_9x19_JHP"};
+	launcher[] = {""};
+	magazines[] = {"rhsusf_mag_17Rnd_9x19_JHP",3};
+	items[] += {"ACE_tourniquet",2,"ACE_DefusalKit",1,"ACE_Clacker",1,"FirstAidKit",1};
+	binoculars[] = {"rhsusf_bino_m24_ARD"};
+	lrradios[] =  {"ACRE_PRC152"};
+	compass[] = {"ItemCompass"};
+	goggles[] = {"G_Tactical_Black"};
+	gps[] = {""};
+	headgear[] = {"H_Helmet_HardHat_Black_RF"};
+	map[] = {"ItemMap"};
+	nvgs[] = {""};
+	watch[] = {"ItemWatch"};
+
+}
+
+class FIREFIGHTER_COMBAT_CREW : CommonIndependet // Firefighter (Crew)
+{
+	headgear[] = {"H_Helmet_HardHat_Yellow_RF"};
+	binoculars[] = {""};
+}
