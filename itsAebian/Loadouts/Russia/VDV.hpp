@@ -444,7 +444,7 @@ class RU_SPC_TL : CommonRussia // спецназ [Team Leader]
 	uniform[] = {"rhs_uniform_gorka_r_g"};
 	vest[] = {"rhs_6b23_digi_6sh92_Vog_Radio_Spetsnaz"};
 	backpack[] = {"B_Carryall_oli"};
-	primary[] = {"rhs_weap_ak105_zenitco01_b33","rhs_acc_dtk4short", "rhsusf_acc_eotech_552_d", "rhsusf_acc_grip2", "rhs_acc_perst3"};
+	primary[] = {"rhs_weap_ak105_zenitco01_b33","rhs_acc_dtk4short", "rhsusf_acc_eotech_552_d", "rhsusf_acc_grip2", "rhs_acc_perst3","rhs_45Rnd_545X39_7U1_AK"};
 	secondary[] = {"rhs_weap_pb_6p9","rhs_acc_6p9_suppressor","rhs_mag_9x18_8_57N181S"};
 	launcher[] = {""};
 	magazines[] = {"rhs_45Rnd_545X39_7U1_AK",11,"rhs_mag_9x18_8_57N181S",2,"rhs_mag_nspn_green",4,"rhs_mag_nspn_red",4};
